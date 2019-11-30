@@ -1,13 +1,13 @@
-name: dy
-on:
-  schedule:
-    - cron: '0/60 * * * *'
-jobs:
-  test:
-    name: dy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v1
-      - run: chmod +x ./dy
-      - run: DB_HOST=${{ secrets.DB_HOST }} DB_PORT=${{ secrets.DB_PORT }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} ./dy
+#name: dy
+#on:
+#  schedule:
+#    - cron: '0/60 * * * *'
+#jobs:
+#  test:
+#    name: dy
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check out code into the Go module directory
+#        uses: actions/checkout@v1
+#      - run: chmod +x ./dy
+#      - run: DB_HOST=${{ secrets.DB_HOST }} DB_PORT=${{ secrets.DB_PORT }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} ./dy
