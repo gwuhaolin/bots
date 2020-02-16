@@ -11,3 +11,4 @@ jobs:
         uses: actions/checkout@v1
       - run: chmod +x ./dy
       - run: DB_HOST=${{ secrets.DB_HOST }} DB_PORT=${{ secrets.DB_PORT }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} ./dy
+      - run: curl https://dy.wuhaolin.cn/clearCache
