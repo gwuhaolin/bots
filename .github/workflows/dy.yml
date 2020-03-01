@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ github.token }}
-      - run: docker run -e DB_HOST=${{ secrets.DB_HOST }} -e DB_PORT=${{ secrets.DB_PORT }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} docker.pkg.github.com/gwuhaolin/documentary-fans/dy-server:latest
+      - run: docker run -e DB_HOST=${{ secrets.DB_HOST }} -e DB_PORT=${{ secrets.DB_PORT }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} gwuhaolin/dy-server:latest
       - name: Clear Cache
         uses: wei/curl@master
         with:
