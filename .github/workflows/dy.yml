@@ -7,12 +7,7 @@ jobs:
     name: dy
     runs-on: ubuntu-latest
     steps:
-      - name: Docker Login
-        uses: azure/docker-login@v1
-        with:
-          login-server: docker.pkg.github.com
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+      - run: docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
       - run: docker run -e DB_HOST=${{ secrets.DB_HOST }} -e DB_PORT=${{ secrets.DB_PORT }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} docker.pkg.github.com/gwuhaolin/documentary-fans/dy-fetch:latest
       - name: Clear Cache
         uses: wei/curl@master
