@@ -7,10 +7,7 @@ jobs:
     name: dy
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v1
-      - run: chmod +x ./dy
-      - run: DB_HOST=${{ secrets.DB_HOST }} DB_PORT=${{ secrets.DB_PORT }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} ./dy
+      - run: docker run -e DB_HOST=${{ secrets.DB_HOST }} -e DB_PORT=${{ secrets.DB_PORT }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} docker.pkg.github.com/gwuhaolin/documentary-fans/dy-fetch:latest
       - name: Clear Cache
         uses: wei/curl@master
         with:
