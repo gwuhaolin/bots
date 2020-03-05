@@ -1,7 +1,7 @@
 name: dy
 on:
   schedule:
-    - cron: '0/360 * * * *'
+    - cron: '0/720 * * * *'
 jobs:
   test:
     name: dy
