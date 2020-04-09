@@ -7,7 +7,7 @@ jobs:
     name: dy
     runs-on: ubuntu-latest
     steps:
-      - run: docker run -e DB_HOST=${{ secrets.DB_HOST }} -e DB_PORT=${{ secrets.DB_PORT }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} docker.io/gwuhaolin/dy-ai
+      - run: docker run --oom-kill-disable -e DB_HOST=${{ secrets.DB_HOST }} -e DB_PORT=${{ secrets.DB_PORT }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} docker.io/gwuhaolin/dy-ai
       - name: Clear Cache
         uses: wei/curl@master
         with:
