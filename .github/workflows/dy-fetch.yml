@@ -8,3 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: docker run -e DB_HOST=${{ secrets.DB_HOST }} -e DB_PORT=${{ secrets.DB_PORT }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} docker.io/gwuhaolin/dy-fetch
+      - name: Clear Cache
+        uses: wei/curl@master
+        with:
+          args: https://${{ secrets.DB_HOST }}/d/clearCache
+  
