@@ -11,4 +11,4 @@ jobs:
       - name: Clear Cache
         uses: wei/curl@master
         with:
-          args: http://${{ secrets.DB_HOST }}/clearCache
+          args: https://${{ secrets.DB_HOST }}/d/clearCache
