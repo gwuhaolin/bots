@@ -1,4 +1,4 @@
-name: dy-fetch
+name: dy-map
 on:
   schedule:
     - cron: '0 15 * * *'
