@@ -1,7 +1,7 @@
 name: dy-ai
 on:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 15 * * *'
 jobs:
   test:
     name: dy
